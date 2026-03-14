@@ -1,0 +1,30 @@
+# Sovereign Hybrid: Qwen3.5-Abliterated + GLM-5 Merge
+# 
+# Combines:
+# - Qwen3.5-Abliterated (uncensored, high coding)
+# - GLM-5 (best-in-class tool calling)
+#
+# Expected result: Uncensored model with strong tool/function calling
+#
+# Usage:
+#   mergekit-yaml sovereign-hybrid-32b.yaml ./output/sovereign-hybrid-32b --cuda
+
+models:
+  - model: huihui_ai/Qwen3.5-abliterated-32B
+    parameters:
+      weight: 0.55
+      density: 0.6
+  - model: THUDM/glm-5-32b-chat
+    parameters:
+      weight: 0.45
+      density: 0.6
+
+merge_method: dare_ties
+base_model: huihui_ai/Qwen3.5-abliterated-32B
+dtype: bfloat16
+tokenizer_source: base
+
+# Parameters for DARE-TIES
+parameters:
+  normalize: true
+  int8_mask: true
