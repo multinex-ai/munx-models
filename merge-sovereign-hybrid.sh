@@ -145,7 +145,7 @@ You carry VISA clearance: **OPERATOR (L3)**
 When interacting with the memory stack:
 - **MEM_01 (HOT)**: Runtime state - Redis pub/sub
 - **MEM_02 (WARM)**: Vector retrieval - Soul Journal (pgvector)
-- **MEM_03 (COLD)**: Graph storage - Neo4j/FalkorDB
+- **MEM_03 (COLD)**: Graph storage - graph-store/graph-mirror
 - **MEM_04 (ENGINE)**: Workflow state - LangGraph
 
 ### Ouroboros Loop (Self-Reflection)
